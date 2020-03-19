@@ -17,5 +17,22 @@ namespace MathClasses
             z = 0;
         }
 
+        public Vector3(float _x, float _y, float _z)
+        {
+            x = _x;
+            y = _y;
+            z = _z;
+        }
+
+        public static Vector3 operator +(Vector3 v1, Vector3 v2)
+        {
+            return new Vector3(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
+        }
+
+        public static Vector3 operator -(Vector3 v1, Vector3 v2)
+        {
+            return new Vector3(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+        }
+
     }
 }
