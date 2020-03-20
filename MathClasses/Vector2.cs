@@ -41,5 +41,22 @@ namespace MathClasses
         {
             return new Vector2(v.x * f, v.y * f);
         }
+
+        public float Dot(Vector2 other)
+        {
+            return x * other.x + y * other.y;
+        }
+
+        public float Magnitude()
+        {
+            return (float)Math.Sqrt(x * x + y * y);
+        }
+
+        public void Normalize()
+        {
+            float m = Magnitude();
+            x /= m;
+            y /= m;
+        }
     }
 }
