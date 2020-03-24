@@ -64,6 +64,23 @@ namespace MathClasses
             return (float)Math.Sqrt(x * x + y * y + z * z + w * w);
         }
 
+        public float MagnitudeSqr()
+        {
+            return x * x + y * y + z * z + w * w;
+        }
+
+        public float Distance(Vector4 other)
+        {
+            Vector4 diff = this - other;
+            return diff.Magnitude();
+        }
+
+        public float DistanceSqr(Vector4 other)
+        {
+            Vector4 diff = this - other;
+            return diff.MagnitudeSqr();
+        }
+
         public void Normalize()
         {
             float m = Magnitude();
