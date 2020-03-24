@@ -56,12 +56,15 @@ namespace MathClasses
 
         public float Magnitude()
         {
-            return 0;
+            return (float)Math.Sqrt(x * x + y * y + z * z);
         }
 
         public void Normalize()
         {
-            
+            float m = Magnitude();
+            x /= m;
+            y /= m;
+            z /= m;
         }
     }
 }

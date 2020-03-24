@@ -48,22 +48,29 @@ namespace MathClasses
 
         public float Dot(Vector4 other)
         {
-            return 0;
+            return x * other.x + y * other.y + z * other.z + w * other.w;
         }
 
         public Vector4 Cross(Vector4 other)
         {
-            return this;
+            Vector3 v3a = new Vector3(x, y, z);
+            Vector3 v3b = new Vector3(other.x, other.y, other.z);
+            Vector3 v3c = v3a.Cross(v3b);
+            return new Vector4(v3c.x, v3c.y, v3c.z, 0);
         }
 
         public float Magnitude()
         {
-            return 0;
+            return (float)Math.Sqrt(x * x + y * y + z * z + w * w);
         }
 
         public void Normalize()
         {
-
+            float m = Magnitude();
+            x /= m;
+            y /= m;
+            z /= m;
+            w /= m;
         }
     }
 }
