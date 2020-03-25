@@ -552,6 +552,5 @@ namespace UnitTestProject
             Assert.AreEqual<UInt32>(c.colour, 0x00000078);
             
         }
-        
     }
 }

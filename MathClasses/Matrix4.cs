@@ -26,7 +26,7 @@ namespace MathClasses
             m13= _m13; m14= _m14; m15= _m15; m16= _m16;
         }
 
-        public static Matrix4 operator *(Matrix4 m1, Matrix4 m2)
+        public static Matrix4 operator *(Matrix4 ml, Matrix4 mr)
         {
             throw new NotImplementedException();
         }

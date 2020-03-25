@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathClasses
 {
-    class Matrix2
+    public class Matrix2
     {
         public float m1, m2, m3, m4;
 
@@ -22,8 +22,10 @@ namespace MathClasses
             m3 = _m3; m4 = _m4;
         }
 
-        public static Matrix2 operator *(Matrix2 m1, Matrix2 m2)
+        public static Matrix2 operator *(Matrix2 ml, Matrix2 mr)
         {
+            return new Matrix2(ml.m1 * mr.m1 + ml.m2 * mr.m3, ml.m1 * mr.m2 + ml.m2 * mr.m4,
+                               ml.m3 * mr.m1 + ml.m4 * mr.m3, ml.m3 * mr.m2 + ml.m4 * mr.m4);
             throw new NotImplementedException();
         }
 
