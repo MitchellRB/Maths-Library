@@ -28,7 +28,10 @@ namespace MathClasses
 
         public static Matrix4 operator *(Matrix4 ml, Matrix4 mr)
         {
-            throw new NotImplementedException();
+            return new Matrix4(ml.m1 * mr.m1 + ml.m2 * mr.m5 + ml.m3 * mr.m9 + ml.m4 * mr.m13, ml.m1 * mr.m2 + ml.m2 * mr.m6 + ml.m3 * mr.m10 + ml.m4 * mr.m14, ml.m1 * mr.m3 + ml.m2 * mr.m7 + ml.m3 * mr.m11 + ml.m4 * mr.m15, ml.m1 * mr.m4 + ml.m2 * mr.m8 + ml.m3 * mr.m12 + ml.m4 * mr.m16,
+                               ml.m5 * mr.m1 + ml.m6 * mr.m5 + ml.m7 * mr.m9 + ml.m8 * mr.m13, ml.m5 * mr.m2 + ml.m6 * mr.m6 + ml.m7 * mr.m10 + ml.m8 * mr.m14, ml.m5 * mr.m3 + ml.m6 * mr.m7 + ml.m7 * mr.m11 + ml.m8 * mr.m15, ml.m5 * mr.m4 + ml.m6 * mr.m8 + ml.m7 * mr.m12 + ml.m8 * mr.m16,
+                               ml.m9 * mr.m1 + ml.m10 * mr.m5 + ml.m11 * mr.m9 + ml.m12 * mr.m13, ml.m9 * mr.m2 + ml.m10 * mr.m6 + ml.m11 * mr.m10 + ml.m12 * mr.m14, ml.m9 * mr.m3 + ml.m10 * mr.m7 + ml.m11 * mr.m11 + ml.m12 * mr.m15, ml.m9 * mr.m4 + ml.m10 * mr.m8 + ml.m11 * mr.m12 + ml.m12 * mr.m16,
+                               ml.m13 * mr.m1 + ml.m14 * mr.m5 + ml.m15 * mr.m9 + ml.m16 * mr.m13, ml.m13 * mr.m2 + ml.m14 * mr.m6 + ml.m15 * mr.m10 + ml.m16 * mr.m14, ml.m13 * mr.m3 + ml.m14 * mr.m7 + ml.m15 * mr.m11 + ml.m16 * mr.m15, ml.m13 * mr.m4 + ml.m14 * mr.m8 + ml.m15 * mr.m12 + ml.m16 * mr.m16);
         }
 
         public static Vector4 operator *(Matrix4 m, Vector4 v)
