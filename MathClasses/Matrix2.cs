@@ -30,7 +30,8 @@ namespace MathClasses
 
         public static Vector2 operator *(Matrix2 m, Vector2 v)
         {
-            throw new NotImplementedException();
+            return new Vector2(m.m1 * v.x + m.m3 * v.y,
+                               m.m2 * v.x + m.m4 * v.y);
         }
     }
 }

@@ -36,7 +36,10 @@ namespace MathClasses
 
         public static Vector4 operator *(Matrix4 m, Vector4 v)
         {
-            throw new NotImplementedException();
+            return new Vector4(m.m1 * v.x + m.m5 * v.y + m.m9 * v.z + m.m13 * v.w,
+                               m.m2 * v.x + m.m6 * v.y + m.m10 * v.z + m.m14 * v.w,
+                               m.m3 * v.x + m.m7 * v.y + m.m11 * v.z + m.m15 * v.w,
+                               m.m4 * v.x + m.m8 * v.y + m.m12 * v.z + m.m16 * v.w);
         }
 
         public void SetRotateX(float x)

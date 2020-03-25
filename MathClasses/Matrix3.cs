@@ -33,7 +33,9 @@ namespace MathClasses
 
         public static Vector3 operator *(Matrix3 m, Vector3 v)
         {
-            throw new NotImplementedException();
+            return new Vector3(m.m1 * v.x + m.m4 * v.y + m.m7 * v.z,
+                               m.m2 * v.x + m.m5 * v.y + m.m8 * v.z,
+                               m.m3 * v.x + m.m6 * v.y + m.m9 * v.z);
         }
 
         public void SetRotateX(float x)
