@@ -52,6 +52,10 @@ namespace MathClasses
         {
             throw new NotImplementedException();
         }
-
+        
+        public Matrix3 GetTranspose()
+        {
+            return new Matrix3(m1, m4, m7, m2, m5, m8, m3, m6, m9);
+        }
     }
 }

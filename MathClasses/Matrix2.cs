@@ -33,5 +33,10 @@ namespace MathClasses
             return new Vector2(m.m1 * v.x + m.m3 * v.y,
                                m.m2 * v.x + m.m4 * v.y);
         }
+
+        public Matrix2 GetTranpose()
+        {
+            return new Matrix2(m1, m3, m2, m4);
+        }
     }
 }
