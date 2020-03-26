@@ -40,6 +40,12 @@ namespace MathClasses
             m3 = _m3; m4 = _m4;
         }
 
+        public void SetRotation(float radians)
+        {
+            Set((float)Math.Cos(radians), (float)-Math.Sin(radians),
+                (float)Math.Sin(radians), (float)Math.Sin(radians));
+        }
+
         public Matrix2 GetTranpose()
         {
             return new Matrix2(m1, m3, m2, m4);
