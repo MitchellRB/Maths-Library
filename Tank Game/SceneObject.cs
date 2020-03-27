@@ -22,12 +22,6 @@ namespace Tank_Game
         public Matrix3 LocalTranform { get => localTransform; }
         public Matrix3 GlobalTransform { get => globalTransform; }
 
-        rl.Texture2D texture = new rl.Texture2D();
-        rl.Image image = new rl.Image();
-
-        public float Width { get => texture.width; }
-        public float Height { get => texture.height; }
-
         public SceneObject()
         {
 
@@ -102,12 +96,6 @@ namespace Tank_Game
         {
             localTransform.SetScale(x, y, 1);
             UpdateTransform();
-        }
-
-        public void Load(string path)
-        {
-            image = LoadImage(path);
-            texture = LoadTextureFromImage(image);
         }
 
         ~SceneObject()
