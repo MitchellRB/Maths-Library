@@ -27,5 +27,16 @@ namespace Tank_Game
         {
             return new rl.Vector4(vector.x, vector.y, vector.z, vector.w);
         }
+
+        //Convert betwenn degrees and radians
+        public static float DegToRad(float degrees)
+        {
+            return degrees / 180 * (float)Math.PI;
+        }
+
+        public  static float RadToDeg(float radians)
+        {
+            return radians / (float)Math.PI * 180 ;
+        }
     }
 }

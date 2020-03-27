@@ -74,6 +74,36 @@ namespace Tank_Game
             }
         }
 
+        public void SetPosition(float x, float y)
+        {
+            localTransform.SetTranslate(x, y);
+            UpdateTransform();
+        }
+
+        public void Translate(float x, float y)
+        {
+            localTransform.Translate(x, y);
+            UpdateTransform();
+        }
+
+        public void SetRotate(float radians)
+        {
+            localTransform.SetRotateZ(radians);
+            UpdateTransform();
+        }
+
+        public void Rotate(float radians)
+        {
+            localTransform.RotateZ(radians);
+            UpdateTransform();
+        }
+
+        public void SetScale(float x, float y)
+        {
+            localTransform.SetScale(x, y, 1);
+            UpdateTransform();
+        }
+
         public void Load(string path)
         {
             image = LoadImage(path);
