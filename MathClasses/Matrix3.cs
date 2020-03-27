@@ -45,11 +45,25 @@ namespace MathClasses
             m7 = _m7; m8 = _m8; m9 = _m9;
         }
 
+        public void Set(Matrix3 m)
+        {
+            m1 = m.m1; m2 = m.m2; m3 = m.m3;
+            m4 = m.m4; m5 = m.m5; m6 = m.m6;
+            m7 = m.m7; m8 = m.m8; m9 = m.m9;
+        }
+
         public void SetScale(float x, float y, float z)
         {
             m1 = x; m2 = 0; m3 = 0;
             m4 = 0; m5 = y; m6 = 0;
             m7 = 0; m8 = 0; m9 = z;
+        }
+
+        public void Scale(float x, float y, float z)
+        {
+            Matrix3 m = new Matrix3();
+            m.SetScale(x, y, z);
+            Set(this * m);
         }
 
         public void SetRotateX(float radians)

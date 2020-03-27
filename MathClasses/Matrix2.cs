@@ -40,10 +40,23 @@ namespace MathClasses
             m3 = _m3; m4 = _m4;
         }
 
+        public void Set(Matrix2 m)
+        {
+            m1 = m.m1; m2 = m.m2;
+            m3 = m.m3; m4 = m.m4;
+        }
+
         public void SetScale(float x, float y)
         {
             m1 = x; m2 = 0;
             m3 = 0; m4 = y;
+        }
+
+        public void Scale(float x, float y)
+        {
+            Matrix2 m = new Matrix2();
+            m.SetScale(x, y);
+            Set(this * m);
         }
 
         public void SetRotate(float radians)
