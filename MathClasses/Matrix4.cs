@@ -58,6 +58,21 @@ namespace MathClasses
             m13 = m.m13; m14 = m.m14; m15 = m.m15; m16 = m.m16;
         }
 
+        public void SetTranslate(float x, float y, float z)
+        {
+            m4 = x;
+            m8 = y;
+            m12 = z;
+            m16 = 1;
+        }
+
+        public void Translate(float x, float y, float z)
+        {
+            Matrix4 m = new Matrix4();
+            m.SetTranslate(x, y, z);
+            Set(this * m);
+        }
+
         public void SetScale(float x, float y, float z)
         {
             m1 = x; m2 = 0; m3 = 0; m4 = 0;
