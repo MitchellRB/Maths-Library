@@ -11,14 +11,16 @@ namespace Tank_Game
 {
     class Game
     {
+        
+
         public void Init()
         {
-
+            SetTargetFPS(60);
         }
 
         public void Update()
         {
-
+            
         }
 
         public void Draw()

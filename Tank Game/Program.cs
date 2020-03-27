@@ -22,7 +22,15 @@ namespace Tank_Game
             while (!WindowShouldClose())
             {
                 game.Update();
+
+                BeginDrawing();
+                ClearBackground(rl.Color.WHITE);
+
                 game.Draw();
+
+                DrawFPS(0,0);
+
+                EndDrawing();
             }
 
             CloseWindow();
