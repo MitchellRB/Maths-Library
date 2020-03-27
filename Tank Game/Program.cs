@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MathClasses;
 using rl = Raylib;
+using static Raylib.Raylib;
 
 namespace Tank_Game
 {
@@ -12,6 +13,19 @@ namespace Tank_Game
     {
         static void Main(string[] args)
         {
+            InitWindow(640, 480, "Tank game");
+
+            Game game = new Game();
+
+            game.Init();
+
+            while (!WindowShouldClose())
+            {
+                game.Update();
+                game.Draw();
+            }
+
+            CloseWindow();
         }
     }
 }
