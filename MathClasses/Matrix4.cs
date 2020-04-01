@@ -26,7 +26,7 @@ namespace MathClasses
             m13= _m13; m14= _m14; m15= _m15; m16= _m16;
         }
 
-        public static Matrix4 operator *(Matrix4 ml, Matrix4 mr)
+        public static Matrix4 operator *(Matrix4 mr, Matrix4 ml)
         {
             return new Matrix4(ml.m1 * mr.m1 + ml.m2 * mr.m5 + ml.m3 * mr.m9 + ml.m4 * mr.m13, ml.m1 * mr.m2 + ml.m2 * mr.m6 + ml.m3 * mr.m10 + ml.m4 * mr.m14, ml.m1 * mr.m3 + ml.m2 * mr.m7 + ml.m3 * mr.m11 + ml.m4 * mr.m15, ml.m1 * mr.m4 + ml.m2 * mr.m8 + ml.m3 * mr.m12 + ml.m4 * mr.m16,
                                ml.m5 * mr.m1 + ml.m6 * mr.m5 + ml.m7 * mr.m9 + ml.m8 * mr.m13, ml.m5 * mr.m2 + ml.m6 * mr.m6 + ml.m7 * mr.m10 + ml.m8 * mr.m14, ml.m5 * mr.m3 + ml.m6 * mr.m7 + ml.m7 * mr.m11 + ml.m8 * mr.m15, ml.m5 * mr.m4 + ml.m6 * mr.m8 + ml.m7 * mr.m12 + ml.m8 * mr.m16,

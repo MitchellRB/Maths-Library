@@ -205,7 +205,7 @@ namespace UnitTestProject
 
             Assert.IsTrue(compare(v4a, new Vector4(0.270935f, -0.0537745f, 0.961094f, 0)));
         }
-        
+
         [TestMethod]
         public void Matrix3SetRotateX()
         {
@@ -327,7 +327,7 @@ namespace UnitTestProject
             Matrix3 m3c = new Matrix3();
             m3c.SetRotateZ(9.62f);
 
-            Matrix3 m3d = m3c * m3a;
+            Matrix3 m3d = m3a * m3c;
 
             Assert.IsTrue(compare(m3d,
                 new Matrix3(-0.981004655361f, 0.129707172513f, 0.14424264431f, 0.193984255195f, 0.655946731567f, 0.729454636574f, 0, 0.743579149246f, -0.668647944927f)));
@@ -342,7 +342,7 @@ namespace UnitTestProject
             Matrix4 m4c = new Matrix4();
             m4c.SetRotateZ(0.72f);
 
-            Matrix4 m4d = m4b * m4c;
+            Matrix4 m4d = m4c * m4b;
 
             Assert.IsTrue(compare(m4d,
                 new Matrix4(-0.644213855267f, -0.565019249916f, 0.515501439571f, 0, -0.659384667873f, 0.751805722713f, 0, 0, -0.387556940317f, -0.339913755655f, -0.856888711452f, 0, 0, 0, 0, 1)));
@@ -465,7 +465,7 @@ namespace UnitTestProject
             Vector4 v4c = m4c * v4a;
             Assert.IsTrue(compare(v4c, new Vector4(31.0490131378f, 39.2981109619f, -54, 0)));
         }
-        
+
         [TestMethod]
         public void ColourConstructor()
         {
@@ -550,7 +550,6 @@ namespace UnitTestProject
             c.SetAlpha(0x78);
 
             Assert.AreEqual<UInt32>(c.colour, 0x00000078);
-            
         }
     }
 }

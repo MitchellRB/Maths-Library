@@ -11,11 +11,16 @@ namespace Tank_Game
 {
     class Game
     {
-        
+        SceneObject tankObject = new SceneObject();
+        SpriteObject tankSprite = new SpriteObject();
 
         public void Init()
         {
             SetTargetFPS(60);
+
+            tankSprite.Load(@"..\Sprites\PNG\Tanks\TankBlue.png");
+            tankSprite.SetRotate(Conversions.DegToRad(90));
+            tankSprite.SetPosition(-tankSprite.Width / 2, tankSprite.Height / 2);
         }
 
         public void Update()
@@ -25,7 +30,7 @@ namespace Tank_Game
 
         public void Draw()
         {
-
+            tankSprite.Draw();
         }
     }
 }

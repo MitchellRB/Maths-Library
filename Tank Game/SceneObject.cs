@@ -53,7 +53,7 @@ namespace Tank_Game
 
         public void UpdateTransform()
         {
-            if (parent == null)
+            if (parent != null)
             {
                 globalTransform = parent.globalTransform * localTransform;
             }

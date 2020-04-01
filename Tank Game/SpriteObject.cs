@@ -23,5 +23,11 @@ namespace Tank_Game
             image = LoadImage(path);
             texture = LoadTextureFromImage(image);
         }
+
+        public override void OnDraw()
+        {
+            float rotation = (float)Math.Atan2(globalTransform.m2, globalTransform.m1);
+            rl.Raylib.DrawTextureEx(texture, new rl.Vector2((int)globalTransform.m3, (int)globalTransform.m6), Conversions.RadToDeg(rotation), 1, rl.Color.WHITE);
+        }
     }
 }

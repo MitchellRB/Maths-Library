@@ -22,7 +22,7 @@ namespace MathClasses
             m3 = _m3; m4 = _m4;
         }
 
-        public static Matrix2 operator *(Matrix2 ml, Matrix2 mr)
+        public static Matrix2 operator *(Matrix2 mr, Matrix2 ml)
         {
             return new Matrix2(ml.m1 * mr.m1 + ml.m2 * mr.m3, ml.m1 * mr.m2 + ml.m2 * mr.m4,
                                ml.m3 * mr.m1 + ml.m4 * mr.m3, ml.m3 * mr.m2 + ml.m4 * mr.m4);

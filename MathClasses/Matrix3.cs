@@ -24,7 +24,7 @@ namespace MathClasses
             m7 = _m7; m8 = _m8; m9 = _m9;
         }
 
-        public static Matrix3 operator *(Matrix3 ml, Matrix3 mr)
+        public static Matrix3 operator *(Matrix3 mr, Matrix3 ml)
         {
             return new Matrix3(ml.m1 * mr.m1 + ml.m2 * mr.m4 + ml.m3 * mr.m7, ml.m1 * mr.m2 + ml.m2 * mr.m5 + ml.m3 * mr.m8, ml.m1 * mr.m3 + ml.m2 * mr.m6 + ml.m3 * mr.m9,
                                ml.m4 * mr.m1 + ml.m5 * mr.m4 + ml.m6 * mr.m7, ml.m4 * mr.m2 + ml.m5 * mr.m5 + ml.m6 * mr.m8, ml.m4 * mr.m3 + ml.m5 * mr.m6 + ml.m6 * mr.m9,
