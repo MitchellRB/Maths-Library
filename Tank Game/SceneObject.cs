@@ -16,11 +16,13 @@ namespace Tank_Game
 
         public SceneObject Parent { get => parent; }
 
-        protected Matrix3 localTransform = new Matrix3();
-        protected Matrix3 globalTransform = new Matrix3();
+        protected Vector2 globalPosition = new Vector2();
 
-        public Matrix3 LocalTranform { get => localTransform; }
-        public Matrix3 GlobalTransform { get => globalTransform; }
+        protected Vector2 localPosition = new Vector2();
+
+        protected float globalRotation;
+
+        protected float localRotation;
 
         public SceneObject()
         {
@@ -55,11 +57,11 @@ namespace Tank_Game
         {
             if (parent != null)
             {
-                globalTransform = parent.globalTransform * localTransform;
+
             }
             else
             {
-                globalTransform = localTransform;
+                
             }
 
             foreach (var child in children)
@@ -70,31 +72,31 @@ namespace Tank_Game
 
         public void SetPosition(float x, float y)
         {
-            localTransform.SetTranslate(x, y);
+            
             UpdateTransform();
         }
 
         public void Translate(float x, float y)
         {
-            localTransform.Translate(x, y);
+            
             UpdateTransform();
         }
 
         public void SetRotate(float radians)
         {
-            localTransform.SetRotateZ(radians);
+            
             UpdateTransform();
         }
 
         public void Rotate(float radians)
         {
-            localTransform.RotateZ(radians);
+            
             UpdateTransform();
         }
 
         public void SetScale(float x, float y)
         {
-            localTransform.SetScale(x, y, 1);
+            
             UpdateTransform();
         }
 

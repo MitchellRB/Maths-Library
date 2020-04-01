@@ -13,7 +13,7 @@ namespace Tank_Game
     {
         static void Main(string[] args)
         {
-            InitWindow(640, 480, "Tank game");
+            InitWindow(640 * 2, 480 * 2, "Tank game");
 
             Game game = new Game();
 
@@ -27,8 +27,6 @@ namespace Tank_Game
                 ClearBackground(rl.Color.WHITE);
 
                 game.Draw();
-
-                DrawFPS(0,0);
 
                 EndDrawing();
             }
