@@ -11,23 +11,33 @@ namespace Tank_Game
 {
     class Game
     {
-        SpriteObject tankObject = new SpriteObject();
+        SceneObject tankObject = new SceneObject();
+        SpriteObject tankSprite = new SpriteObject();
 
-        SpriteObject turretObject = new SpriteObject();
+        SceneObject turretObject = new SceneObject();
+        SpriteObject turretSprite = new SpriteObject();
 
         public void Init()
         {
             SetTargetFPS(60);
 
-            tankObject.Load(@"..\..\Sprites\PNG\Tanks\TankBlue.png");
+            tankSprite.Load(@"..\..\Sprites\PNG\Tanks\TankBlue.png");
 
-            turretObject.Load(@"..\..\Sprites\PNG\Tanks\BarrelBlue");
+            tankObject.SetPosition(300, 300);
+            tankObject.AddChild(tankSprite);
+
+            turretSprite.Load(@"..\..\Sprites\PNG\Tanks\BarrelBlue");
+
+            tankObject.AddChild(turretObject);
+            turretObject.AddChild(turretSprite);
+
+            turretObject.UpdateTransform();
 
         }
 
         public void Update()
         {
-
+            tankObject.Rotate(1);
         }
 
         public void Draw()

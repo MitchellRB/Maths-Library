@@ -57,11 +57,13 @@ namespace Tank_Game
         {
             if (parent != null)
             {
-
+                globalPosition = localPosition + parent.globalPosition;
+                globalRotation = localRotation + parent.globalRotation;
             }
             else
             {
-                
+                globalPosition = localPosition;
+                globalRotation = localRotation;
             }
 
             foreach (var child in children)
@@ -72,31 +74,27 @@ namespace Tank_Game
 
         public void SetPosition(float x, float y)
         {
-            
+            localPosition.x = x;
+            localPosition.y = y;
             UpdateTransform();
         }
 
         public void Translate(float x, float y)
         {
-            
+            localPosition.x += x;
+            localPosition.y += y;
             UpdateTransform();
         }
 
-        public void SetRotate(float radians)
+        public void SetRotate(float rotation)
         {
-            
+            localRotation = rotation;
             UpdateTransform();
         }
 
-        public void Rotate(float radians)
+        public void Rotate(float rotation)
         {
-            
-            UpdateTransform();
-        }
-
-        public void SetScale(float x, float y)
-        {
-            
+            localRotation += rotation;   
             UpdateTransform();
         }
 
@@ -130,7 +128,7 @@ namespace Tank_Game
 
         public virtual void OnDraw()
         {
-
+            DrawRectangle((int)globalPosition.x - 2, (int)globalPosition.y - 2, 5, 5, rl.Color.RED);
         }
 
         public void Draw()
