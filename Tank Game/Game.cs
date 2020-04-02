@@ -23,10 +23,12 @@ namespace Tank_Game
 
             tankSprite.Load(@"..\..\Sprites\PNG\Tanks\TankBlue.png");
 
-            tankObject.SetPosition(300, 300);
+            tankObject.SetPosition(350, 300);
             tankObject.AddChild(tankSprite);
 
             turretSprite.Load(@"..\..\Sprites\PNG\Tanks\BarrelBlue");
+
+            tankSprite.UpdateTransform();
 
             tankObject.AddChild(turretObject);
             turretObject.AddChild(turretSprite);
@@ -37,7 +39,23 @@ namespace Tank_Game
 
         public void Update()
         {
-            tankObject.Rotate(1);
+            if (IsKeyDown(rl.KeyboardKey.KEY_A))
+            {
+                tankObject.Rotate(-2);
+            }
+            if (IsKeyDown(rl.KeyboardKey.KEY_D))
+            {
+                tankObject.Rotate(2);
+            }
+
+            if (IsKeyDown(rl.KeyboardKey.KEY_W))
+            {
+                tankObject.MoveForeward(1);
+            }
+            if (IsKeyDown(rl.KeyboardKey.KEY_S))
+            {
+                tankObject.MoveForeward(-1);
+            }
         }
 
         public void Draw()

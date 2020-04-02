@@ -98,6 +98,11 @@ namespace Tank_Game
             UpdateTransform();
         }
 
+        public void MoveForeward(float distance)
+        {
+            Translate((float)Math.Cos(Conversions.DegToRad(localRotation - 90)) * distance, (float)Math.Sin(Conversions.DegToRad(localRotation - 90)) * distance);
+        }
+
         ~SceneObject()
         {
             if (parent != null)
@@ -113,7 +118,17 @@ namespace Tank_Game
 
         public virtual void OnUpdate()
         {
+            if (localRotation >= 360)
+            {
+                localRotation -= 360;
+            }
 
+            if (localRotation < 0)
+            {
+                localRotation += 360;
+            }
+
+            UpdateTransform();
         }
 
         public void Update()
