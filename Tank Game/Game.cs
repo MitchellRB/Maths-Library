@@ -11,67 +11,30 @@ namespace Tank_Game
 {
     class Game
     {
-        SceneObject tankObject = new SceneObject();
-        SpriteObject tankSprite = new SpriteObject();
+        Tank tank = new Tank();
 
-        SceneObject turretObject = new SceneObject();
-        SpriteObject turretSprite = new SpriteObject();
+        public SceneObject world = new SceneObject();
 
         public void Init()
         {
             SetTargetFPS(60);
 
-            tankSprite.Load(@"..\..\Sprites\PNG\Tanks\TankBlue.png");
+            world.AddChild(tank);
 
-            tankObject.SetPosition(350, 300);
-            tankObject.AddChild(tankSprite);
+            tank.Load(@"..\..\Sprites\PNG\Tanks\tankBlue.png", @"..\..\Sprites\PNG\Tanks\barrelBlue.png", @"..\..\Sprites\PNG\Bullets\bulletBlue.png");
 
-            turretSprite.Load(@"..\..\Sprites\PNG\Tanks\BarrelBlue.png");
-
-            tankSprite.UpdateTransform();
-
-            tankObject.AddChild(turretObject);
-            turretObject.AddChild(turretSprite);
-
-            turretSprite.origin.y = 40;
-
-            turretObject.UpdateTransform();
+            tank.SetPosition(350, 300);
 
         }
 
         public void Update()
         {
-            if (IsKeyDown(rl.KeyboardKey.KEY_A))
-            {
-                tankObject.Rotate(-2);
-            }
-            if (IsKeyDown(rl.KeyboardKey.KEY_D))
-            {
-                tankObject.Rotate(2);
-            }
-
-            if (IsKeyDown(rl.KeyboardKey.KEY_W))
-            {
-                tankObject.MoveForeward(1);
-            }
-            if (IsKeyDown(rl.KeyboardKey.KEY_S))
-            {
-                tankObject.MoveForeward(-1);
-            }
-
-            if (IsKeyDown(rl.KeyboardKey.KEY_Q))
-            {
-                turretObject.Rotate(-2);
-            }
-            if (IsKeyDown(rl.KeyboardKey.KEY_E))
-            {
-                turretObject.Rotate(2);
-            }
+            world.Update();
         }
 
         public void Draw()
         {
-            tankObject.Draw();
+            world.Draw();
         }
     }
 }

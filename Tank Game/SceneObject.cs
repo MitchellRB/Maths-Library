@@ -22,17 +22,22 @@ namespace Tank_Game
 
         protected float globalRotation;
 
+        public float GlobalRotation { get => globalRotation; }
+
         protected float localRotation;
+
+        public float LocalRotation { get => localRotation; }
 
         public SceneObject()
         {
 
         }
 
-        public void AddChild(SceneObject child)
+        public SceneObject AddChild(SceneObject child)
         {
             children.Add(child);
             child.parent = this;
+            return child;
         }
 
         public void RemoveChild(SceneObject child)
@@ -135,9 +140,9 @@ namespace Tank_Game
         {
             OnUpdate();
 
-            foreach (var child in children)
+            for (int i = 0; i < children.Count; i++)
             {
-                child.Update();
+                children[i].Update();
             }
         }
 

@@ -14,10 +14,20 @@ namespace Tank_Game
 
         rl.Texture2D texture = new rl.Texture2D();
 
-        public Vector2 origin;
+        public Vector2 origin = new Vector2();
 
         public float Width { get => texture.width; }
         public float Height { get => texture.height; }
+
+        public SpriteObject()
+        {
+
+        }
+
+        public SpriteObject(rl.Texture2D t)
+        {
+            texture = t;
+        }
 
         public void Load(string path)
         {
