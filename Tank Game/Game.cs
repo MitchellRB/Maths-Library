@@ -19,7 +19,6 @@ namespace Tank_Game
 
         public void Init()
         {
-            SetTargetFPS(60);
 
             world.AddChild(tank);
 

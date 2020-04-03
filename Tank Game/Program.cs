@@ -13,13 +13,15 @@ namespace Tank_Game
     {
         public static bool debug = true;
 
+        public static Game game = new Game();
+
         static void Main(string[] args)
         {
             InitWindow(640 * 2, 480 * 2, "Tank game");
 
-            Game game = new Game();
-
             game.Init();
+
+            SetTargetFPS(60);
 
             while (!WindowShouldClose())
             {
