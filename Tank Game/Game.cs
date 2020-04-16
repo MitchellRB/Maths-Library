@@ -106,12 +106,26 @@ namespace Tank_Game
 
         public void Draw()
         {
-            if (state == gameStates.play)
+            if (state == gameStates.menu)
+            {
+                DrawText("Tank Game", Program.screenWidth / 2 - MeasureText("Tank Game",64) / 2, Program.screenHeight / 2 - 200, 64, rl.Color.BLACK);
+                DrawText("Press SPACE to play", Program.screenWidth / 2 - MeasureText("Press SPACE to play",24) / 2, Program.screenHeight / 2, 24, rl.Color.BLACK);
+            }
+            else if (state == gameStates.play)
             {
                 world.Draw();
 
             }
-                if (Program.debug) DrawFPS(0, 0);
+            else if (state == gameStates.player1Victory)
+            {
+                DrawText("Player 1 Wins!", Program.screenWidth / 2 - MeasureText("Player 1 Wins!",64) / 2, Program.screenHeight / 2 - 200, 64, rl.Color.BLUE);
+            }
+            else if (state == gameStates.player2Victory)
+            {
+                DrawText("Player 2 Wins!", Program.screenWidth / 2 - MeasureText("Player 2 Wins!",64) / 2, Program.screenHeight / 2 - 200, 64, rl.Color.RED);
+            }
+
+            if (Program.debug) DrawFPS(0, 0);
         }
     }
 }
