@@ -37,9 +37,9 @@ namespace Tank_Game
 
             world.AddChild(player1);
 
-            player1.Load(@"..\..\Sprites\PNG\Tanks\tankBlue.png", @"..\..\Sprites\PNG\Tanks\barrelBlue.png", @"..\..\Sprites\PNG\Bullets\bulletBlue.png");
+            player1.Load(@"..\Sprites\PNG\Tanks\tankBlue.png", @"..\Sprites\PNG\Tanks\barrelBlue.png", @"..\Sprites\PNG\Bullets\bulletBlue.png");
 
-            player1.SetPosition(350, 300);
+            player1.SetPosition(350, 400);
 
             player1.SetRotate(0);
 
@@ -50,9 +50,9 @@ namespace Tank_Game
 
             world.AddChild(player2);
 
-            player2.Load(@"..\..\Sprites\PNG\Tanks\tankRed.png", @"..\..\Sprites\PNG\Tanks\barrelRed.png", @"..\..\Sprites\PNG\Bullets\bulletRed.png");
+            player2.Load(@"..\Sprites\PNG\Tanks\tankRed.png", @"..\Sprites\PNG\Tanks\barrelRed.png", @"..\Sprites\PNG\Bullets\bulletRed.png");
 
-            player2.SetPosition(950, 300);
+            player2.SetPosition(950, 400);
 
             player2.SetRotate(0);
 
