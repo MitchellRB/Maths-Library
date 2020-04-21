@@ -30,7 +30,7 @@ namespace Tank_Game
         public void Init()
         {
             //Setup the world
-            world = new SceneObject("World",new Box(new Vector2(0,0),new Vector2(Program.screenWidth,Program.screenHeight)));
+            world = new SceneObject("World",new Box(0, 0, Program.screenWidth, Program.screenHeight));
 
             //Create player 1
             player1 = new Tank("Player1");
@@ -57,7 +57,6 @@ namespace Tank_Game
             player2.SetRotate(0);
 
             player2.controls.SetControls(rl.KeyboardKey.KEY_I, rl.KeyboardKey.KEY_K, rl.KeyboardKey.KEY_J, rl.KeyboardKey.KEY_L, rl.KeyboardKey.KEY_U, rl.KeyboardKey.KEY_O, rl.KeyboardKey.KEY_M);
-
         }
 
         public void Reset()

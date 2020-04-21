@@ -26,6 +26,12 @@ namespace Tank_Game
             max = _max;
         }
 
+        public Box(float minX, float minY, float maxX, float maxY)
+        {
+            min = new Vector2(minX, minY);
+            max = new Vector2(maxX, maxY);
+        }
+
         public Vector2 Center()
         {
             return (min + max) * 0.5f;

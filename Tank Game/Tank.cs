@@ -66,7 +66,7 @@ namespace Tank_Game
             if (IsKeyDown(controls.foreward))
             {
                 MoveForeward(2);
-                if (CheckCollision())
+                if (Collides() || !globalBox.Overlaps(parent.GlobalBox))
                 {
                     MoveForeward(-2);
                 }
@@ -74,7 +74,7 @@ namespace Tank_Game
             if (IsKeyDown(controls.back))
             {
                 MoveForeward(-2);
-                if (CheckCollision())
+                if (Collides() || !globalBox.Overlaps(parent.GlobalBox))
                 {
                     MoveForeward(2);
                 }
@@ -99,7 +99,7 @@ namespace Tank_Game
             }
         }
 
-        bool CheckCollision()
+        bool Collides()
         {
             foreach (var item in parent.Children)
             {
