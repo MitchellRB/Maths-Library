@@ -42,6 +42,7 @@ namespace Tank_Game
             localBox.max = globalPosition + sprite.origin;
         }
 
+        //Load in sprites, including the bullet sprite
         public void Load(string tankPath, string turretPath, string bulletPath)
         {
             sprite.Load(tankPath);
@@ -82,23 +83,27 @@ namespace Tank_Game
 
             if (IsKeyDown(controls.turretLeft))
             {
-                turret.Rotate(-2);
+                turret.Rotate(-4);
             }
             if (IsKeyDown(controls.turretRight))
             {
-                turret.Rotate(2);
+                turret.Rotate(4);
             }
 
             if (IsKeyPressed(controls.shoot))
             {
+                //Create bullet with a reference to its sprite
                 Bullet bullet = new Bullet(ref bulletTexture, "Bullet");
                 bullet.SetPosition(globalPosition.x, globalPosition.y);
                 bullet.SetRotate(turret.GlobalRotation);
+                //Move bullet to end of barrel
                 bullet.MoveForeward(40);
+                //Add bullet as a child of the world
                 parent.AddChild(bullet);
             }
         }
 
+        //Returns true if the tank is colliding with any other object
         bool Collides()
         {
             foreach (var item in parent.Children)

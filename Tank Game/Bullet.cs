@@ -28,13 +28,15 @@ namespace Tank_Game
         {
             base.OnUpdate();
             MoveForeward(10);
+
+            //Stop processing if ouside the world
             if (globalPosition.x < -50 || globalPosition.x > GetScreenWidth() + 50 || globalPosition.y < -50 || globalPosition.y > GetScreenHeight() + 50)
             {
                 parent.RemoveChild(this);
                 return;
             }
 
-            //Check collision
+            //Check collision with tanks
 
             foreach (var item in parent.Children)
             {
@@ -55,7 +57,6 @@ namespace Tank_Game
             {
                 timer--;
             }
-
         }
 
     }

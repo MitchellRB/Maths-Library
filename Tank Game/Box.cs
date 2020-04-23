@@ -9,6 +9,7 @@ using static Raylib.Raylib;
 
 namespace Tank_Game
 {
+    //Axis aligned bounding box
     class Box
     {
         public Vector2 min;
@@ -37,11 +38,13 @@ namespace Tank_Game
             return (min + max) * 0.5f;
         }
 
+        //Returns true if a point is inside the box
         public bool Overlaps(Vector2 p)
         {
             return !(p.x < min.x || p.y < min.y || p.x > max.x || p.x > max.y);
         }
 
+        //Returns true if two boxes overlap
         public bool Overlaps(Box other)
         {
             return !(max.x < other.min.x || max.y < other.min.y || min.x > other.max.x || min.y > other.max.y);

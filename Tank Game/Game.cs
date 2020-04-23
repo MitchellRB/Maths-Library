@@ -59,6 +59,7 @@ namespace Tank_Game
             player2.controls.SetControls(rl.KeyboardKey.KEY_I, rl.KeyboardKey.KEY_K, rl.KeyboardKey.KEY_J, rl.KeyboardKey.KEY_L, rl.KeyboardKey.KEY_U, rl.KeyboardKey.KEY_O, rl.KeyboardKey.KEY_M);
         }
 
+        //Reset positions of the players
         public void Reset()
         {
 
@@ -118,10 +119,12 @@ namespace Tank_Game
             else if (state == gameStates.player1Victory)
             {
                 DrawText("Player 1 Wins!", Program.screenWidth / 2 - MeasureText("Player 1 Wins!",64) / 2, Program.screenHeight / 2 - 200, 64, rl.Color.BLUE);
+                DrawText("Press SPACE to play again", Program.screenWidth / 2 - MeasureText("Press SPACE to play again",24) / 2, Program.screenHeight / 2, 24, rl.Color.BLACK);
             }
             else if (state == gameStates.player2Victory)
             {
                 DrawText("Player 2 Wins!", Program.screenWidth / 2 - MeasureText("Player 2 Wins!",64) / 2, Program.screenHeight / 2 - 200, 64, rl.Color.RED);
+                DrawText("Press SPACE to play again", Program.screenWidth / 2 - MeasureText("Press SPACE to play again",24) / 2, Program.screenHeight / 2, 24, rl.Color.BLACK);
             }
 
             if (Program.debug) DrawFPS(0, 0);
