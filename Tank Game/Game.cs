@@ -88,6 +88,7 @@ namespace Tank_Game
             }
             else if (state == gameStates.player1Victory || state == gameStates.player2Victory)
             {
+                //Remove all bullets from the game
                 for (int i = 0; i < world.Children.Count; i++)
                 {
                     if (world.Children[i].name == "Bullet")
@@ -95,7 +96,11 @@ namespace Tank_Game
                         world.RemoveChild(world.GetChild(i));
                     }
                 }
-                if (IsKeyPressed(rl.KeyboardKey.KEY_SPACE)) { state = gameStates.play; Reset(); }
+                if (IsKeyPressed(rl.KeyboardKey.KEY_SPACE))
+                {
+                    state = gameStates.play;
+                    Reset();
+                }
             }
 
             if (IsKeyPressed(rl.KeyboardKey.KEY_F1))

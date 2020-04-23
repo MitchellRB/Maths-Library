@@ -4,7 +4,7 @@ Tank game using custom library of vector and matrix maths.
 
 Controls | Player 1 | Player 2
 ---|---|---
-Foreward | W | I
+Forward | W | I
 Backward | S | K
 Left | A | J
 Right | D | L

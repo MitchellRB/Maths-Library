@@ -27,7 +27,7 @@ namespace Tank_Game
         public override void OnUpdate()
         {
             base.OnUpdate();
-            MoveForeward(10);
+            MoveForward(10);
 
             //Stop processing if ouside the world
             if (globalPosition.x < -50 || globalPosition.x > GetScreenWidth() + 50 || globalPosition.y < -50 || globalPosition.y > GetScreenHeight() + 50)

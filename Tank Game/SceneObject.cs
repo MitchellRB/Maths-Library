@@ -126,7 +126,7 @@ namespace Tank_Game
             UpdateTransform();
         }
 
-        public void MoveForeward(float distance)
+        public void MoveForward(float distance)
         {
             Translate((float)Math.Cos(Conversions.DegToRad(localRotation - 90)) * distance, (float)Math.Sin(Conversions.DegToRad(localRotation - 90)) * distance);
         }

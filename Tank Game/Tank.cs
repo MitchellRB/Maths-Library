@@ -29,6 +29,7 @@ namespace Tank_Game
             AddChildren();
         }
 
+        //Add the parts to the hierarchy
         void AddChildren()
         {
             AddChild(sprite);
@@ -36,6 +37,7 @@ namespace Tank_Game
             turret.AddChild(turretSprite);
         }
 
+        //Set size of collision box
         void CreateCollider()
         {
             localBox.min = globalPosition - sprite.origin;
@@ -55,6 +57,8 @@ namespace Tank_Game
         public override void OnUpdate()
         {
             base.OnUpdate();
+
+            //Rotation
             if (IsKeyDown(controls.left))
             {
                 Rotate(-2);
@@ -64,23 +68,26 @@ namespace Tank_Game
                 Rotate(2);
             }
 
-            if (IsKeyDown(controls.foreward))
+            //Movement
+            if (IsKeyDown(controls.forward))
             {
-                MoveForeward(2);
+                MoveForward(2);
+                //Check if the tank is colliding and move back if it does
                 if (Collides() || !globalBox.Overlaps(parent.GlobalBox))
                 {
-                    MoveForeward(-2);
+                    MoveForward(-2);
                 }
             }
             if (IsKeyDown(controls.back))
             {
-                MoveForeward(-2);
+                MoveForward(-2);
                 if (Collides() || !globalBox.Overlaps(parent.GlobalBox))
                 {
-                    MoveForeward(2);
+                    MoveForward(2);
                 }
             }
 
+            //Turret rotation
             if (IsKeyDown(controls.turretLeft))
             {
                 turret.Rotate(-4);
@@ -97,7 +104,7 @@ namespace Tank_Game
                 bullet.SetPosition(globalPosition.x, globalPosition.y);
                 bullet.SetRotate(turret.GlobalRotation);
                 //Move bullet to end of barrel
-                bullet.MoveForeward(40);
+                bullet.MoveForward(40);
                 //Add bullet as a child of the world
                 parent.AddChild(bullet);
             }
@@ -119,6 +126,11 @@ namespace Tank_Game
         public override void OnDraw()
         {
             base.OnDraw();
+            if (Program.debug)
+            {
+                DrawText(((int)globalPosition.x).ToString() + ' ' + ((int)globalPosition.y).ToString(), (int)globalPosition.x - (int) sprite.Width / 2, (int)globalPosition.y + (int)sprite.Height / 2, 12, rl.Color.RED);
+                DrawText(globalRotation.ToString(), (int)globalPosition.x - (int)sprite.Width / 2, (int)globalPosition.y + (int)sprite.Height / 2 + 10, 12, rl.Color.RED);
+            }
         }
     }
 }
